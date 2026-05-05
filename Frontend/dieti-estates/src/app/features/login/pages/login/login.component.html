@@ -1,0 +1,29 @@
+<div class="page-container">
+  <div class="login-container">
+    <pop-up-component [popUp]="popUp" [isOpen]="showPopUp" (close)="showPopUp = false" />
+    <h1 class="title">DIETI ESTATES</h1>
+    <h2 class="subtitle">ACCEDI</h2>
+
+    <form class="login-form" (ngSubmit)="login()">
+      <input type="email" name="email" placeholder="Email" class="input-field" [(ngModel)]="email" required />
+      <input type="password" name="password" placeholder="Password" class="input-field" [(ngModel)]="password" required />
+
+      <button type="submit" class="confirm-button" [disabled]="clicked">Continua</button>
+    </form>
+
+    <p class="register-text">
+      Non hai un account?
+      <a href="/register" class="register-link">Crea Account</a>
+    </p>
+
+    <div class="separator">
+      <hr class="line" />
+      <span>OPPURE</span>
+      <hr class="line" />
+    </div>
+    
+    <app-social-login></app-social-login>
+
+  </div>
+  
+</div>

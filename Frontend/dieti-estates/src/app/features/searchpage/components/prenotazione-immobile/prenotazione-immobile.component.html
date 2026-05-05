@@ -1,0 +1,36 @@
+<div class="div-container">
+    <div class= "div-dati-agente">
+        <div class="ruolo">Agente <br> Immobiliare </div>
+        <div class="nome-agente">{{ agente.nome }}  {{ agente.cognome }}</div>
+    </div>
+    <div class="card-agente"> 
+        <div class="div-form-prenotazione">
+        <div class="prenotazione-button" (click)="openPrenotazione('appuntamento')">Prenota Appuntamento</div>
+
+        <div class="separator">
+            <hr class="line" />
+            <span>oppure</span>
+            <hr class="line" />
+        </div>
+
+        <div class="prenotazione-button" (click)="openPrenotazione('offerta')">Proponi un altro prezzo</div>
+    </div>
+    </div>
+
+    
+    <pop-up-component [popUp]="popUp" [isOpen]="showPopUp" (close)="showPopUp = false" />
+</div>
+
+<div class="modal-overlay" *ngIf="showPrenotazione" (click)="closePrenotazione()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="color: #13944F; margin: -5px 0px 0px 5px;">{{ chosenPopUp === 'appuntamento' ? 'Prenota Visita' : 'Proponi un altro prezzo' }}</h2>
+                <button (click)="closePrenotazione()" style="background: none; border: none; font-size: 40px; cursor: pointer; color: #13944F;">
+                    &times;
+                </button>
+            </div>
+            
+            <calendar-component *ngIf="chosenPopUp === 'appuntamento'" [coordinate]="immobile.coordinata" (calendarEvent)="onPrenotazioneReceived($event)" />
+            <offer-component *ngIf="chosenPopUp === 'offerta'" [immobile]="immobile" (offerEvent)="onOfferReceived($event)" />
+    </div>
+</div>

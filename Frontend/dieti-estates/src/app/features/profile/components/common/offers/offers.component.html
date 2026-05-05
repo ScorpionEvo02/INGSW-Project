@@ -1,0 +1,23 @@
+<div *ngIf="offerteImmobili.length === 0" class="empty">
+    Nessuna offerta trovata.
+  </div>
+  
+<div *ngFor="let offertaImmobile of offerteImmobili" class="offer-card">
+  <img *ngIf="offertaImmobile.immobile?.immagine" [src]="'data:image/jpeg;base64,' + offertaImmobile.immobile.immagine" alt="Immagine immobile" class="offer-image" />
+  <div class="offer-details">
+    <p class="offer-status" [ngClass]="getStatusClass(offertaImmobile.offerta.statoOfferta)">
+      {{ offertaImmobile.offerta.statoOfferta }}
+    </p>
+    <h3>{{ offertaImmobile.immobile.indirizzo.via }}, {{ offertaImmobile.immobile.indirizzo.citta }}</h3>
+    <div class="div-costo">
+      <p>Prezzo: <span class="euro">€</span><span class="old-price">{{ offertaImmobile.immobile.costo }}</span></p>
+    </div>
+    <div class="div-costo">
+      <p>Offerta: <span class="euro">€</span><span class="new-price">{{ offertaImmobile.offerta.ammontare }}</span></p>
+    </div>
+    <div *ngIf="isAdmin && offertaImmobile.offerta.statoOfferta == 'Pendente'">
+      <button class="accept-btn" (click)="sendOfferResponse(offertaImmobile.offerta.codOfferta, true)">Accetta</button>
+      <button class="reject-btn" (click)="sendOfferResponse(offertaImmobile.offerta.codOfferta, false)">Rifiuta</button>
+    </div>
+  </div> 
+</div>

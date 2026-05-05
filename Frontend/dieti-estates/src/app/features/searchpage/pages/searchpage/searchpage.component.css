@@ -1,0 +1,42 @@
+.extern-div-search-page {
+  display: grid; 
+  height: calc(100vh - 200px); 
+  width: 100%;
+  grid-template-columns: 7fr 3fr; 
+}
+
+header-component, filter-bar-component {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .extern-div-search-page {
+    display: flex; 
+    width: 100vw;
+  }
+  .extern-map-div {
+    display: none;
+  }
+  .extern-immobili-div {
+    width: 100%;
+  }
+}
+
+.extern-map-div {
+  height: calc(100vh - 133px); 
+  position: relative;
+  margin: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.extern-immobili-div {
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #13944F #f1f1f1;
+  margin-left: 10px;
+  padding-right: 20px     
+}

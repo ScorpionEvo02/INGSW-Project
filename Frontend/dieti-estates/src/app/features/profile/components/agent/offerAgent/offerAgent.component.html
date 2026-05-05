@@ -1,0 +1,17 @@
+<div class="offerAgent-button" (click)="openOffer()">
+  <div class="icon-container">
+    <img src="/profile/offer.png" alt="offerta" class="icon" />
+  </div>
+  <div class="text-container">
+    <h3>Offerte</h3>
+    <p>Consulta le ultime offerte effettuate</p>
+  </div>
+</div>
+
+<modal-profile [isOpen]="showOffer" (close)="closeOffer()" popUpName="Offerte ricevute">
+<div class="extern-offers-div">
+  <offers-component [offerteImmobili]="offerteImmobile" [isAdmin]="true" (offerSignal)="manageOffertaSignal($event)"/>
+</div>
+</modal-profile>
+
+<pop-up-component [popUp]="popUpData" [isOpen]="popUp" (close)="popUp = false" />

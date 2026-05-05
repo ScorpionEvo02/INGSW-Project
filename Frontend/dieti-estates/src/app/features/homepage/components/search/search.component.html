@@ -1,0 +1,24 @@
+<div class="div-background-image-search">
+    <div class="div-search-bar-esteno">
+        <div class="div-search-bar-choice">
+            <div class="div-bar-choice" [class.active]="searchType === 'Vendita'"  (click)="setSearchType('Vendita')">Vendita</div>
+            <div class="div-bar-choice" [class.active]="searchType === 'Affitto'"  (click)="setSearchType('Affitto')">Affitto</div>
+            <div class="div-bar-choice" [class.active]="searchType === 'Vendute'"  (click)="setSearchType('Vendute')">Vendute</div>
+        </div>
+        <div class="search-bar">
+            <div class="search-container">
+                <pop-up-component [popUp]="popUp" [isOpen]="showPopUp" (close)="showPopUp = false" />
+                <input type="text"  class="search-bar-input-text" [(ngModel)]="query" (input)="updateSuggestions()" placeholder="Inserisci città" />
+                <ul *ngIf="filteredSuggestions.length > 0" class="suggestions">
+                  <li *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion)">
+                    {{ suggestion.description }}
+                  </li>
+                </ul>
+            </div>
+            <div class="search-bar-button-div">
+                <button class="search-bar-button search-bar-button-ricerca" (click)="startSearch()">Ricerca</button>
+            </div>
+        </div>
+    </div>
+</div>
+

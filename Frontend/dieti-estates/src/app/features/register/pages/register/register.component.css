@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap'); 
+
+.page-container
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1920px;
+    background-color: #9bb6a0; 
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.register-container 
+{
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 650px;
+    background-color: #FCFCFC; 
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.title 
+{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #13944F;
+    margin-bottom: 30px;
+}
+
+.subtitle 
+{
+    font-size: 1.2rem;
+    font-weight: 100;
+    color: #A6A6A6;
+    margin-bottom: 30px;
+}
+
+.register-form 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input-container 
+{
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+.input-label
+{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: gray;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.input-field 
+{
+    font-family: 'Michroma';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+  
+.input-field:focus + .input-label,
+.input-field:valid + .input-label 
+{
+    top: 1px;        
+    transform: none; 
+    font-size: 10px;
+    color: #13944F;
+}
+
+.confirm-button 
+{
+    width: 100%;
+    max-width: 380px;
+    padding: 15px;
+    background-color: #13944F;
+    color: white;
+    font-family: 'Michroma';
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 6px 6px 10px #bebebe, -6px -6px 10px #ffffff;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.signup-button:hover 
+{
+    background-color: #10703D;
+}
+  
+.radio-group{
+    margin: 0 auto;
+    width: 100%;
+}
+
+input[type="date"]:not(:focus):not(:valid)::-webkit-datetime-edit 
+{
+    color: transparent;
+}
+  
+input[type="date"]:focus::-webkit-datetime-edit,
+input[type="date"]:valid::-webkit-datetime-edit 
+{
+    color: black;
+}
+  
+input[type="date"].date-filled::-webkit-datetime-edit 
+{
+    color: black;
+}
+  
+.input-field.invalid {
+    border: 2px solid red;
+}
+  
+.input-field.valid {
+    border: 2px solid green;
+}

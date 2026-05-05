@@ -1,0 +1,12 @@
+<div class="modal-overlay" *ngIf="isOpen" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div style="display: flex; justify-content: space-between; align-items: center; max-height: 10%;">
+        <h2 style="color: #13944F;">{{ popUpName }}</h2>
+        <button (click)="closeModal()" style="background: none; border: none; font-size: 40px; cursor: pointer; color: #13944F;">
+            &times;
+        </button>
+      </div>
+      <ng-content></ng-content>
+    </div>
+</div>
+  

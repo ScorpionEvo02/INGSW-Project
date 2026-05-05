@@ -1,0 +1,175 @@
+<div class="header-div-esterno-filter-bar">
+  <div class="filter-group">
+    <div class="filter-button" (click)="openFilter('prezzo')">
+      <img src="/Immobile/prezzo.png" alt="Icona prezzo" style="height: 22px; width: 22px;"/>
+      <div class="filter-button-text">
+        <span *ngIf="minPrezzo === null && maxPrezzo === null">
+          Prezzo
+        </span>
+        <span  *ngIf="minPrezzo !== null || maxPrezzo !== null">
+          {{ minPrezzo !== null ? minPrezzo : '-' }} - {{ maxPrezzo !== null ? maxPrezzo : '-' }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <div class="filter-button" (click)="openFilter('metratura')">
+      <img src="/Immobile/metratura.png" alt="Icona metratura" style="height: 22px; width: 22px;"/>
+      <div class="filter-button-text">
+        <span class="filter-valore" *ngIf="minSuperficie === null && maxSuperficie === null">
+          Superficie
+        </span>
+        <span class="filter-valore" *ngIf="minSuperficie !== null || maxSuperficie !== null">
+          {{ minSuperficie !== null ? minSuperficie : '-' }} - {{ maxSuperficie !== null ? maxSuperficie : '-' }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <div class="filter-button" (click)="openFilter('camere')">
+      <img src="/Immobile/camera.png" alt="Icona camere" style="height: 22px; width: 22px;"/>
+      <div class="filter-button-text">
+        <span class="filter-valore" *ngIf="minCamereLetto === null && maxCamereLetto === null">
+          Camere da letto
+        </span>
+        <span class="filter-valore" *ngIf="minCamereLetto !== null || maxCamereLetto !== null">
+          {{ minCamereLetto !== null ? minCamereLetto : '-' }} - {{ maxCamereLetto !== null ? maxCamereLetto : '-' }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <div class="filter-button" (click)="openFilter('bagni')">
+      <img src="/Immobile/bagno.svg" alt="Icona bagni" style="height: 22px; width: 22px;"/>
+      <div class="filter-button-text">
+        <span class="filter-valore" *ngIf="minBagni === null && maxBagni === null">
+          Bagni
+        </span>
+        <span class="filter-valore" *ngIf="minBagni !== null || maxBagni !== null">
+          {{ minBagni !== null ? minBagni : '-' }} - {{ maxBagni !== null ? maxBagni : '-' }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-group">
+    <div class="filter-button" (click)="openFilter('classe_energetica')">
+      <img src="/Immobile/classe-energetica.png" alt="Icona classe energetica" style="height: 22px; width: 22px;"/>
+      <div class="filter-button-text">
+        <span class="filter-valore" *ngIf="!classeEnergetica">
+          Classe energetica
+        </span>
+        <span class="filter-valore" *ngIf="classeEnergetica">
+          {{ classeEnergetica }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+    <div class="filter-group">
+      <div class="filter-button" (click)="openFilter('raggio')">
+        <img src="/Immobile/ricerca.png" alt="Icona ricerca" style="height: 22px; width: 22px;"/>
+        <div class="filter-button-text">
+          <span class="filter-valore" *ngIf="raggio <= 10">
+            Raggio Ricerca
+          </span>
+          <span class="filter-valore" *ngIf="raggio > 10">
+            {{ raggio }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div >
+    <div class="dropdown-menu" *ngIf="showPrezzo" [style.marginLeft]="mLeft">
+    <label>
+      Prezzo minimo:
+      <input type="number" [(ngModel)]="minPrezzo">
+    </label>
+    <label>
+      Prezzo massimo:
+      <input type="number" [(ngModel)]="maxPrezzo">
+    </label>
+    <div class="dropdown-actions">
+      <button class="dropdown-apply" (click)="applyFilter()">Applica</button>
+    </div>
+  </div>
+
+  <div class="dropdown-menu" *ngIf="showCamereLetto" [style.marginLeft]="mLeft">
+    <label>
+      Numero camere da letto minimo:
+      <select [(ngModel)]="minCamereLetto">
+        <option *ngFor="let n of numbers" [value]="n + 1">{{ n + 1 }}</option>
+      </select>
+    </label>
+    <label>
+      Numero camere da letto massimo:
+      <select [(ngModel)]="maxCamereLetto">
+        <option *ngFor="let n of numbers" [value]="n + 1">{{ n + 1 }}</option>
+      </select>
+    </label>
+    <div class="dropdown-actions">
+      <button class="dropdown-apply" (click)="applyFilter()">Applica</button>
+    </div>
+  </div>
+  
+  <div class="dropdown-menu" *ngIf="showBagni" [style.marginLeft]="mLeft">
+    <label>
+      Numero bagni minimo:
+      <select [(ngModel)]="minBagni">
+        <option *ngFor="let n of numbers" [value]="n + 1">{{ n + 1 }}</option>
+      </select>
+    </label>
+    <label>
+      Numero bagni massimo:
+      <select [(ngModel)]="maxBagni">
+        <option *ngFor="let n of numbers" [value]="n + 1">{{ n + 1 }}</option>
+      </select>
+    </label>
+    <div class="dropdown-actions">
+      <button class="dropdown-apply" (click)="applyFilter()">Applica</button>
+    </div>
+  </div>
+  
+  <div class="dropdown-menu" *ngIf="showSuperficie" [style.marginLeft]="mLeft">
+    <label>
+      Metratura minima:
+      <input type="number" [(ngModel)]="minSuperficie">
+    </label>
+    <label>
+      Metratura massima:
+      <input type="number" [(ngModel)]="maxSuperficie">
+    </label>
+    <div class="dropdown-actions">
+      <button class="dropdown-apply" (click)="applyFilter()">Applica</button>
+    </div>
+  </div>
+
+  <div class="dropdown-menu" *ngIf="showClasseEnergetica" [style.marginLeft]="mLeft">
+    <label>
+      Seleziona classe energetica:
+      <select [(ngModel)]="classeEnergetica">
+        <option *ngFor="let classe of ['A4', 'A3', 'A2', 'A1', 'B', 'C', 'D', 'E', 'F', 'G']" [value]="classe">{{ classe }}</option>
+      </select>
+    </label>
+    <div class="dropdown-actions">
+      <button class="dropdown-apply" (click)="applyFilter()">Applica</button>
+    </div>
+  </div>
+  <div class="dropdown-menu" *ngIf="showRaggio" [style.marginLeft]="mLeft">
+    <label>
+      Seleziona raggio ricerca:
+      <select [(ngModel)]="raggio">
+        <option *ngFor="let classe of [10, 20, 30, 40, 50]" [value]="classe">{{ classe }}</option>
+      </select>
+    </label>
+    <div class="dropdown-actions">
+      <button class="dropdown-apply" (click)="applyFilter()">Applica</button>
+    </div>
+  </div>
+</div>
+  

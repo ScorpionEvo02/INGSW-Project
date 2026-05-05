@@ -1,0 +1,60 @@
+<div class="page-container">
+  <div class="register-container">
+    <pop-up-component [popUp]="popUp" [isOpen]="showPopUp" (close)="showPopUp = false" />
+    <div>
+      <h1 class="title">DIETI ESTATES</h1>
+      <h2 class="subtitle">REGISTRAZIONE</h2>
+    </div>
+    <div class="register-form">
+      <form id="register-form"  (ngSubmit)="onSubmit()">
+        <div class="input-container">
+              <input type="text" id="nome" class="input-field" [(ngModel)]="nome" name="nome" required>
+              <label for="nome" class="input-label">Nome</label>
+            </div>
+            <div class="input-container">
+              <input type="text" id="cognome" class="input-field" [(ngModel)]="cognome" name="cognome" required>
+              <label for="cognome" class="input-label">Cognome</label>
+            </div>
+            <div class="input-container">
+              <input type="date" id="dataNascita" class="input-field" [(ngModel)]="dataNascita" name="dataNascita"  placeholder="" required>
+              <label for="dataNascita" class="input-label">Data di Nascita</label>
+            </div>
+            <div class="input-container">
+              <input type="text" id="citta" class="input-field" [(ngModel)]="citta" name="citta" required>
+              <label for="citta" class="input-label">Città</label>
+            </div>
+            <div class="input-container">
+              <input type="text" id="via" class="input-field" [(ngModel)]="via" name="via" required>
+              <label for="via" class="input-label">Via</label>
+            </div>
+            <div class="input-container">
+              <input type="number" id="numeroCivico" class="input-field" [(ngModel)]="civico" name="numeroCivico" required>
+              <label for="numeroCivico" class="input-label">Numero Civico</label>
+            </div>
+            <div class="input-container">
+              <input type="text" id="codiceFiscale" class="input-field" [(ngModel)]="codiceFiscale" name="codiceFiscale" required>
+              <label for="codiceFiscale" class="input-label">Codice Fiscale</label>
+            </div>
+            <div class="input-container">
+                <div class="radio-group">
+                  <label>
+                    <input type="radio" id="maschio" name="genere" value="M" [(ngModel)]="genere" required> Maschio
+                  </label>
+                  <label>
+                    <input type="radio" id="femmina" name="genere" value="F" [(ngModel)]="genere" required> Femmina
+                  </label>
+                </div>
+            </div>
+            <div class="input-container">
+              <input type="email" id="email" class="input-field" [(ngModel)]="email" name="email" required>
+              <label for="email" class="input-label">Email</label>
+            </div>
+            <div class="input-container">
+              <input type="password" id="password" class="input-field" [(ngModel)]="password" name="password" required>
+              <label for="password" class="input-label">Password</label>
+            </div>
+            <button type="submit" class="confirm-button" [disabled]="clicked">Continua</button>
+        </form>
+    </div>
+  </div>
+</div>

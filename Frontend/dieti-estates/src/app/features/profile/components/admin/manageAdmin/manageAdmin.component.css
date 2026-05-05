@@ -1,0 +1,186 @@
+.manage-admin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 300px;
+  height: 180px;
+  text-align: center;
+  margin-bottom: 30px;
+  }
+  
+  .manage-admin-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .text-container h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: black;
+    font-family: 'Michroma';
+  }
+  
+  .text-container p {
+    font-size: 12px;
+    margin: 4px 0 0;
+    color: #666;
+    font-family: 'Michroma';
+  }
+  
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    margin-bottom: 8px;
+  }
+  
+  .icon {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .search-icon {
+    width: 24px; 
+    height: 24px;
+    position: absolute;
+    bottom: 0; 
+    right: 0;
+  }
+  
+ 
+/* Modale */
+.modal-body {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  border: 2px solid #0056b3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.list-gestori-div-interno{
+  width: 100%;
+  height: calc(50% - 180px);
+}
+
+.list-gestore-gestore{
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: calc(100% - 10px);
+  min-height: 200px;
+  margin: 3px;
+  padding: 5px;
+  -webkit-box-shadow: 0px 10px 15px -5px rgba(92,92,92,0.79); 
+  box-shadow: 0px 10px 15px -5px rgba(92,92,92,0.79);
+}
+
+.list-gestore-gestore-img {
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  margin-top: 5px;
+  width: 100%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.list-gestore-gestore-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.list-gestori-button{
+  text-decoration: none;
+  border: none;
+  border: 2px solid #13944F;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+}
+
+.list-gestori-button:hover{
+  background-color: #13944F;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.extern-immobili-div {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10px;
+  overflow: hidden;
+  overflow-y: auto; /* Scroll per contenuti lunghi */
+  }
+  .list-gestore-gestore {
+    border-radius: 20px;
+    width: calc(100% - 10px);
+    min-height: 200px;
+    margin: 3px;
+    padding: 5px;
+    box-shadow: 0px 10px 15px -5px rgba(92,92,92,0.79);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .gestore-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100%;
+  }
+  
+  .pulsante-elimina-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+  }
+  
+  .btn-elimina-gestore {
+    background-color: #b43232;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Michroma', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-elimina-gestore:hover {
+    background-color: #8f0f05;
+    transform: scale(1.03);
+  }
+  
+  
+
+
+

@@ -1,0 +1,110 @@
+.titolo-visti {
+    color: #13944F;
+    font-size: 25px;
+    margin-left: 50px;
+  }
+  
+  .slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .scroll-wrapper {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .div-user-history-card-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 0.5rem;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 1rem 0;
+  }
+  
+  .div-user-history-card-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 400px;
+    padding: 1rem;
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    margin-right: 1rem;
+  }
+  
+  /* Immagine */
+  .card-image-container {
+    width: 380px;
+    height: 230px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Costo */
+  .div-costo {
+    margin: 20px 5px 10px 5px;
+    font-size: 23px;
+  }
+  
+  .euro {
+    font-family: 'Be Vietnam Pro', sans-serif;
+  }
+  
+  .card p,
+  .div-info-immobile,
+  .div-indirizzo {
+    margin: 0px 5px 5px 5px;
+    font-size: 16px;
+  }
+
+  .nav-button {
+    background: #13944F;
+    color: white;
+    border: none;
+    position: relative;
+    padding: 10px;
+    margin: 0 20px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+    border-radius: 50%;
+  }
+  
+  .left {
+    left: 5px;
+  }
+  
+  .right {
+    right: 5px;
+  }
+  
+  /* Responsive */
+  @media screen and (min-width: 768px) {
+    .card {
+      flex: 0 0 calc(33.33% - 1rem);
+    }
+  }

@@ -1,0 +1,61 @@
+<div class="personal-data-manager-button" (click)="openPersonalData()">
+  <div class="icon-container">
+    <img src="/profile/profileinfo.png" alt="Dati personali" class="icon" />
+  </div>
+  <div class="text-container">
+    <h3>Dati Personali</h3>
+    <p>Visualizza le tue informazioni personali</p>
+  </div>
+</div>
+
+<pop-up-component [popUp]="popUp" [isOpen]="showPopUp" (close)="showPopUp = false" />
+<modal-profile [isOpen]="showPersonalData" (close)="closePersonalData()" popUpName="Dati Personali">
+  <div *ngIf="gestore" class="div-dati-personali">
+    <form [formGroup]="gestoreForm" (ngSubmit)="salvaDati()"> 
+      
+      <label>Nome</label>
+      <input type="text" class="input-field" formControlName="nome" />
+
+      <label>Cognome</label>
+      <input type="text" class="input-field" formControlName="cognome" />
+
+      <label>Codice Fiscale</label>
+      <input type="text" class="input-field" formControlName="codiceFiscale" />
+
+      <label>Data di Nascita</label>
+      <input type="date" class="input-field" formControlName="dataNascita" />
+
+      <div formGroupName="indirizzo" class="div-indirizzo">
+        
+        <label>Via</label>
+        <input type="text" class="input-field" formControlName="via"/>
+        
+        <label>Civico</label>
+        <input type="number" class="input-field" formControlName="civico"/>
+        
+        <label>Città</label>
+        <input type="text" class="input-field" formControlName="citta"/>
+       
+      </div>
+
+      <label>Genere</label>
+      <select class="input-field" formControlName="genere">
+        <option value="M">Maschio</option>
+        <option value="F">Femmina</option>
+        <option value="Altro">Altro</option>
+      </select>
+
+      <label>Email</label>
+      <input type="email" class="input-field" formControlName="email" />
+      
+      <label>Password</label>
+      <input type="password" class="input-field" formControlName="password" 
+      [placeholder]="passwordTouched ? '' : '••••••••••••'"
+      (focus)="onPasswordFocus()"/>
+      
+      <div class="button-container">
+        <button type="submit" [disabled]="gestoreForm.invalid" class="bottone-salva"> Salva </button>
+      </div>
+    </form>
+  </div>
+</modal-profile>

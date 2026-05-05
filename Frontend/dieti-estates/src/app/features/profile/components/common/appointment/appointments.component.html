@@ -1,0 +1,27 @@
+<div *ngIf="appuntamenti.length === 0" class="empty">
+    Nessuna appuntamento trovato.
+  </div>
+  
+  <div *ngFor="let appuntamento of appuntamenti" class="offer-card">
+    <img *ngIf="appuntamento.immobile?.immagine" [src]="'data:image/jpeg;base64,' + appuntamento.immobile.immagine" alt="Immagine immobile" class="offer-image" />
+    <div class="offer-details">
+      <h3>{{ appuntamento.immobile.indirizzo.via }}, {{ appuntamento.immobile.indirizzo.civico }}</h3>
+      <h3>{{ appuntamento.immobile.indirizzo.citta }}</h3>
+      <p>{{ appuntamento.immobile.numeroCamereLetto }} camere da letto • {{ appuntamento.immobile.numeroStanze }} stanze</p>
+      <p class="offer-status" [ngClass]="getStatusClass(appuntamento.prenotazione.statoPrenotazione)">
+        {{ appuntamento.prenotazione.statoPrenotazione }}
+      </p>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <h3>{{ appuntamento.agente.nome }} {{ appuntamento.agente.cognome }}</h3>
+      <div style="display: flex; flex-direction: column;">
+        Data: {{ appuntamento.prenotazione.orarioPrenotazione | date:'dd/MM/yyyy HH:mm' }}
+        <br/>
+        <button *ngIf="appuntamento.prenotazione.statoPrenotazione == 'Accettata'" class="profile-button" (click)="addToCalendar(appuntamento)"> Aggiungi a Calendario</button>
+      </div>
+      <div *ngIf="isAdmin && appuntamento.prenotazione.statoPrenotazione == 'In Attesa'" style="margin-top: 15px;">
+        <button class="accept-btn" (click)="sendOfferResponse(appuntamento.prenotazione.codPrenotazione, true)">✔️ Accetta</button>
+        <button class="reject-btn" (click)="sendOfferResponse(appuntamento.prenotazione.codPrenotazione, false)">❌ Rifiuta</button>
+      </div>
+    </div>
+  </div>

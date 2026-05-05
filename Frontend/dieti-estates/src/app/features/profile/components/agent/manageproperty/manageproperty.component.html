@@ -1,0 +1,127 @@
+<div class="manage-property-button" (click)="openPersonalData()">
+  <div class="icon-container">
+    <img src="/profile/insertproperty.png" alt="Gestisci Proprietà" class="icon" />
+  </div>
+  <div class="text-container">
+    <h3>Inserisci Proprietà</h3>
+    <p>Inserisci le proprietà all'interno del sito</p>
+  </div>
+</div>
+
+<modal-profile [isOpen]="showPersonalData" (close)="closePersonalData()" popUpName="Inserimento immobile">
+  <div class="modal-container">
+
+    <div class="modal-sidebar">
+      <div class=" title-sidebar">Seleziona</div>
+      <button (click)="cambiaSezione(1)" class="section-button" [class.active]="sezioneCorrente === 1"> Dettagli</button>
+      <button (click)="cambiaSezione(2)" class="section-button" [class.active]="sezioneCorrente === 2"> Posizione</button>
+      <button (click)="cambiaSezione(3)" class="section-button" [class.active]="sezioneCorrente === 3"> Caratteristiche</button>
+      <button (click)="cambiaSezione(4)" class="section-button" [class.active]="sezioneCorrente === 4"> Foto</button>
+    </div>
+
+    <div class="modal-content">
+      <form [formGroup]="propertyForm" (ngSubmit)="salvaProprieta()">
+        
+        <div *ngIf="sezioneCorrente === 1">
+          <h4>Dettagli dell'immobile</h4>
+          
+          <div class="form-group">
+            <label for="tipo">Tipo</label>
+            <input id="tipo" type="text" formControlName="tipo" class="input-style" />
+          </div>
+
+          <div class="form-group">
+            <label for="stato">Stato</label>
+            <select id="stato" formControlName="stato" class="input-style"> 
+              <option value="Affitto">Affitto</option>
+              <option value="Vendita">Vendita</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="descrizione">Descrizione </label>
+            <input id="descrizione" type="text" formControlName="descrizione" class="input-style"/>
+          </div>
+
+          <div class="form-group">
+            <label for="costo">Costo (<span class="euro">€</span>)</label>
+            <input id="costo" type="number" formControlName="costo" class="input-style"/>
+          </div>
+        </div>
+
+        <div *ngIf="sezioneCorrente === 2" formGroupName="indirizzo">
+          <h4>Posizione</h4>
+        
+          <div class="form-group">
+            <label for="comune">Comune</label>
+            <input id="comune" type="text" formControlName="comune" class="input-style"/>
+          </div>
+
+          <div class="form-group">
+            <label for="citta">Città</label>
+            <input id="citta" type="text" formControlName="citta" class="input-style"/> 
+          </div>
+        
+          <div class="form-group">
+            <label for="via">Via</label>
+            <input id="via" type="text" formControlName="via" class="input-style"/>
+          </div>
+        
+          <div class="form-group">
+            <label for="num_civico">Numero Civico</label>
+            <input id="num_civico" type="number" formControlName="num_civico" class="input-style"/>
+          </div>
+        </div>
+
+        <div *ngIf="sezioneCorrente === 3">
+          <h4>Caratteristiche</h4>
+          
+          <div class="form-group">
+            <label for="piano">Piano</label>
+            <input id="piano" type="number" formControlName="piano" class="input-style"/>
+          </div>
+
+          <div class="form-group">
+            <label for="classe_energetica">Classe Energetica</label>
+            <select id="classe_energetica" formControlName="classe_energetica" class="input-style">
+              <option *ngFor="let classe of ['A4', 'A3', 'A2', 'A1', 'B', 'C', 'D', 'E', 'F', 'G']" [value]="classe">
+                {{ classe }}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="num_stanze">Numero Stanze</label>
+            <input id="num_stanze" type="number" formControlName="num_stanze" class="input-style"/>
+          </div>
+
+          <div class="form-group">
+            <label for="portineria">Portineria (presente o assente)</label>
+            <input id="portineria" type="text" formControlName="portineria" class="input-style"/>
+          </div>
+
+          <div class="form-group">
+            <label for="metratura">Metratura</label>
+            <input id="metratura" type="text" formControlName="metratura" class="input-style"/>
+          </div>
+        </div>
+
+        <div *ngIf="sezioneCorrente === 4">
+          <h4>Carica Foto</h4>
+          <div class="form-group">
+            <input type="file" (change)="caricaFoto($event)" multiple class="input-style"/>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button *ngIf="sezioneCorrente < 4" type="button" class="btn" (click)="cambiaSezione(sezioneCorrente + 1)">Avanti</button>
+          <button *ngIf="sezioneCorrente === 4" type="submit" class="btn">Salva Proprietà</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</modal-profile>
+
+<pop-up-component [popUp]="popUp" [isOpen]="showPopUp" (close)="showPopUp = false" />

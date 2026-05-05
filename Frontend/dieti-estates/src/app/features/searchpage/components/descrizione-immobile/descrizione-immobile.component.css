@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
+
+.immobile-container{
+    height: 100%;
+    padding: 10px;
+}
+
+.div-costo-immagine{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 10px;
+}
+
+.div-costo {
+    font-size: 30px;
+}
+
+.euro {
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.div-indirizzo{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.div-salva {
+    display: flex;
+    align-items: center;
+}
+
+.img-salva {
+    width: 25px;
+    margin-right: 20px;
+    transition: filter 0.3s ease;
+}
+  
+.img-salva:hover {
+    filter: invert(42%) sepia(81%) saturate(356%) hue-rotate(76deg) brightness(92%) contrast(90%);
+}
+
+.img-salva.selected{
+    filter: invert(42%) sepia(81%) saturate(356%) hue-rotate(76deg) brightness(92%) contrast(90%);
+}
+  
+.sezione-titolo {
+    font-size: 22px;
+    color: #ED8442;
+    margin-bottom: 10px;
+}
+
+.div-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+    padding: 5px;
+}
+
+.intern-div-info-text
+{
+    font-size: 16px;
+    -webkit-text-stroke: 0.4px white;
+}
+
+.icon-info {
+    width: 30px;
+}
+
+
+@media (max-width: 600px) {
+    .extern-div-info{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.intern-div-info{
+    display: grid;
+    grid-template-columns: auto 4fr;
+    align-items: center;
+}
+
+.intern-div-info-text{
+    display: flex; 
+    align-items: center;
+    margin-left: 4px;
+}
+
+.intern-div-info-img{
+    display: flex;
+    align-items: center;
+}

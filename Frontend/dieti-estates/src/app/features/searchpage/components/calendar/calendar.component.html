@@ -1,0 +1,26 @@
+<div class="calendar-container">
+  <div class="div-title-calendar"><h4>Seleziona una data:</h4></div>
+  <div class="calendar-grid">
+    <div *ngFor="let day of selectableDays" 
+         class="calendar-day" 
+         [class.selected]="selectedDate && day.toDateString() === selectedDate.toDateString()" 
+         (click)="selectDate(day)">
+      <span class="day-name">
+        {{ weatherData[day.toISOString().split('T')[0]]?.dayName }} <br/> {{ day.getDate() }}
+      </span> 
+      <span class="weather-icon">
+        {{ weatherIcons[weatherData[day.toISOString().split('T')[0]]?.weatherCode] }}
+      </span>
+    </div>
+  </div>
+  
+  <h4 class="title-orario">Seleziona un orario:</h4>
+  <div class="time-selector">
+    <select id="time" [(ngModel)]="selectedTime" class="input-time">
+      <option *ngFor="let time of ['09:00', '10:00', '11:00','12:00','13:00', '14:00', '15:00', '16:00','17:00', '18:00']" [value]="time">{{ time }}</option>
+    </select>
+    <div  class="div-button-prenotazione"  (click)="(selectedDate && selectedTime) ? submit() : null" [class.disabled]="!selectedDate || !selectedTime"> 
+      Conferma
+    </div>
+  </div>
+</div>

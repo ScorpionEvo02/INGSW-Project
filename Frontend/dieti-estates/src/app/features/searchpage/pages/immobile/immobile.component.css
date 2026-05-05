@@ -1,0 +1,11 @@
+.immobile-page{
+    display: flex;
+    flex-direction: column;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.immobile-page-body{
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+}

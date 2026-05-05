@@ -1,0 +1,15 @@
+<div class="pop-up-overlay" *ngIf="isOpen">
+  <div class="pop-up-content">
+    <button class="close-btn" (click)="closeModal()">✖</button>
+    
+    <div class="icon-container">
+      <img 
+        [src]="popUp.isSuccess ? '/PopUp/success.png' : '/PopUp/fail.png'" 
+        [alt]="popUp.isSuccess ? 'Successo' : 'Errore'"
+      />
+    </div>
+    
+    <h2 class="pop-up-title">{{ popUp.titolo }}</h2>
+    <p class="pop-up-description">{{ popUp.descrizione }}</p>
+  </div>
+</div>

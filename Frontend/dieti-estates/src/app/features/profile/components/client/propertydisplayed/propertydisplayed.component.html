@@ -1,0 +1,15 @@
+<div class="property-displayed-button" (click)="openCronologia()">
+  <div class="icon-container">
+    <img src="/profile/propertydisplayed.png" alt="Proprietà visualizzate" class="icon" />
+  </div>
+  <div class="text-container">
+    <h3>Proprietà visualizzate</h3>
+    <p>Guarda gli annunci visti di recente</p>
+  </div>
+</div>
+
+<modal-profile [isOpen]="showCronologia" (close)="closeCronologia()" popUpName="Visualizzati di recente">
+  <div class="extern-immobili-div">
+    <list-immobili-component [immobili]="immobili" [searchpage]="false" />
+  </div>
+</modal-profile>

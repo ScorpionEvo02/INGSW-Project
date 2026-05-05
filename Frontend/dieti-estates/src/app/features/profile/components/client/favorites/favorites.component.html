@@ -1,0 +1,16 @@
+<!-- Bottone per aprire la modale -->
+<div class="property-saved-button" (click)="openPreferiti()">
+  <div class="icon-container">
+    <img src="/profile/propertysaved.png" alt="Preferiti" class="icon" />
+  </div>
+  <div class="text-container">
+    <h3>Preferiti</h3>
+    <p>Visualizza i tuoi immobili preferiti</p>
+  </div>
+</div>
+
+<modal-profile [isOpen]="showPreferiti" (close)="closePreferiti()" popUpName="Preferiti">
+  <div class="extern-immobili-div">
+    <list-immobili-component [immobili]="immobili" [searchpage]="false" />
+  </div>
+</modal-profile>

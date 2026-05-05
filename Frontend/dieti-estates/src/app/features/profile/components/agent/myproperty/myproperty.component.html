@@ -1,0 +1,17 @@
+<div class="my-property-button" (click)="mostraProperty()">
+  <div class="icon-container">
+    <img src="/profile/agencydata.png" alt="Proprietà inserite" class="icon" />
+  </div>
+  <div class="text-container">
+    <h3>Proprietà inserite</h3>
+    <p>Visualizza le proprietà aggiunte da te</p>
+  </div>
+</div>
+
+<modal-profile [isOpen]="showProperty" (close)="chiudiProperty()" popUpName="Proprietà inserite">
+  <div class="extern-appointment-div" style="height: 100%;">
+    <manage-property-intern-component [immobili]="immobili" (edit)="updateImmobile($event)"/>
+  </div>
+</modal-profile>
+
+<pop-up-component [popUp]="popUpData" [isOpen]="popUp" (close)="popUp = false" />

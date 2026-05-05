@@ -1,0 +1,38 @@
+.social-login 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    width: 100%;
+    margin-top: 20px;
+    gap: 12px;
+}  
+
+.social-button 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px;
+    margin-bottom: 15px;
+    border: 2px solid #000000;
+    border-width: thin;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: white;
+    font-family: 'Michroma';
+    font-size: 0.8rem;
+    transition: background 0.2s ease;
+}
+  
+.social-button img 
+{
+    width: 40px;
+    margin-right: 1px;
+}
+  
+.social-button:hover 
+{
+    background-color: #f0f0f0;
+}

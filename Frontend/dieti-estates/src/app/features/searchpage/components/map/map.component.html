@@ -1,0 +1,25 @@
+<div class="map-component">
+    <google-map [center]="mapCenter" [zoom]="zoom" [options]="mapOptions" (mapClick)="onMapClick($event)" width="100%" height="100%">
+    <map-advanced-marker
+      *ngFor="let immobile of immobili; let i = index"
+      #marker="mapAdvancedMarker"
+      [position]="{ lat: immobile.coordinata.latitudine, lng: immobile.coordinata.longitudine }"
+      [title]="immobile.descrizione"
+      (mapClick)="openInfoWindow(marker, immobile)">
+    </map-advanced-marker>
+
+    <map-info-window #infoWindow="mapInfoWindow">
+      <div>
+        <div>
+          <img *ngIf="selectedImmobile?.immagine" [src]="'data:image/jpeg;base64,' + selectedImmobile?.immagine" alt="Immagine immobile">
+          <div *ngIf="!selectedImmobile?.immagine">Immagine non disponibile</div>
+        </div>
+        <div>
+          <h4>{{ selectedImmobile?.indirizzo?.via }}, {{ selectedImmobile?.indirizzo?.civico }}. {{  selectedImmobile?.indirizzo?.citta }}</h4>
+          <p>{{ selectedImmobile?.descrizione }}</p>
+        </div>
+        <button (click)="goImmobilePage(selectedImmobile?.codImmobile)">Vai all'immobile {{ selectedImmobile?.codImmobile }}</button>
+      </div>
+    </map-info-window>
+  </google-map> 
+</div>

@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
+
+.list-immobili-div-interno{
+    width: 100%;
+    height: calc(50% - 180px);
+}
+
+.list-immobile{
+    position: relative;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: calc(100% - 10px);
+    min-height: 350px;
+    padding: 5px;
+    box-shadow: 0px 10px 15px -5px rgba(92,92,92,0.3);
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+}
+
+.div-costo {
+    margin: 20px 5px 10px 5px;
+    font-size: 23px;
+}
+
+.euro 
+{
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.div-info-immobile
+{
+    margin: 0px 5px 10px 5px;
+    font-size: 17px;
+}
+
+.div-indirizzo
+{
+    margin: 0px 5px 10px 5px;
+    font-size: 17px;
+}
+
+.div-descrizione{
+    margin: 0px 5px 10px 5px;
+    font-size: 15px;
+    color: #5C5C5C;
+}
+
+.list-immobile-prezzo-salva {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.list-immobile-salva {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5px;
+}
+
+.img-salva {
+    width: 18px;
+    margin-right: 15px;
+    transition: filter 0.3s ease;
+}
+  
+.img-salva:hover {
+    filter: invert(42%) sepia(81%) saturate(356%) hue-rotate(76deg) brightness(92%) contrast(90%);
+}
+
+.list-immobile-img {
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    margin-top: 5px;
+    width: 100%;
+    height: inherit; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;  
+}
+
+.list-immobile-img img {
+    width: 460px;
+    height: 400px;
+    margin-right: 5px;
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.immobile-etichetta {
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.immobile-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.list-immobili-button:hover{
+    background-color: #13944F;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+.list-immobili-button{
+    text-decoration: none;
+    border: 2px solid #13944F;
+    padding: 5px;
+    border-radius: 12px;
+    font-family: 'Michroma';
+    color: black;
+}
+
+@media (max-width: 600px) {
+    .list-immobile-immobile {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .list-immobile-immobile-img {
+        width: 100%; 
+    }
+}
+

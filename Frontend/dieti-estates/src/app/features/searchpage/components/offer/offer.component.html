@@ -1,0 +1,25 @@
+<div class="offerta-wrapper">
+  <div class="div-offerta">
+    <form (ngSubmit)="onSubmit()" #offertaForm="ngForm">
+      
+      <div class="div-prezzo-iniziale">
+        <span class="label">Prezzo Iniziale:</span>
+        <div>
+          <div class="div-costo">
+            <span class="euro">€</span>{{ formatCosto(immobile.costo) }}
+          </div>
+        </div>
+      </div>
+
+      <hr class="separatore" />
+
+      <div class="div-prezzo-proposto">
+        <label for="importo">Prezzo proposto:</label>
+        <input type="number" id="importo" name="importo" [(ngModel)]="amount" min="0" required />
+      </div>
+
+      
+      <button type="submit" class="bottone-invia-offerta" [disabled]="!offertaForm.form.valid">Invia Offerta </button>
+    </form>
+  </div>
+</div>

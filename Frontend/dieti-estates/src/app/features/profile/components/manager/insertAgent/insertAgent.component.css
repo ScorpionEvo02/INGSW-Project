@@ -1,0 +1,196 @@
+
+.insert-agent-button 
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 300px;
+  height: 180px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.insert-agent-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.text-container h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+  font-family: 'Michroma';
+}
+
+.text-container p {
+  font-size: 12px;
+  margin: 4px 0 0;
+  color: #666;
+  font-family: 'Michroma';
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  margin-bottom: 8px;
+}
+
+.icon {
+  width: 90px;
+  height: 90px;
+}
+
+.search-icon {
+  width: 24px; 
+  height: 24px;
+  position: absolute;
+  bottom: 0; 
+  right: 0;
+}
+
+.pop-up-scroll
+{
+  max-height: 70vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #13944F #f1f1f1;
+  padding-right: 5px
+}
+
+.input-form 
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px; 
+  margin: 0 auto;
+}
+
+.input-container 
+{
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-label
+{
+  font-family: 'Michroma';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: gray;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.input-field 
+{
+  font-family: 'Michroma';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.input-field:focus + .input-label,
+.input-field:valid + .input-label 
+{
+  top: 1px;        
+  transform: none; 
+  font-size: 10px;
+  color: #13944F;
+}
+
+.confirm-button 
+{
+  width: 100%;
+  max-width: 350px;
+  padding: 15px;
+  background-color: #13944F;
+  color: white;
+  font-family: 'Michroma';
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 6px 6px 10px #bebebe, -6px -6px 10px #ffffff;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.signup-button:hover 
+{
+  background-color: #10703D;
+}
+
+.radio-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 400px;
+  gap: 10px; /* Spazio tra label e radio-group */
+  flex-wrap: nowrap;
+}
+
+.radio-label {
+  margin-left: 5px;
+  min-width: 60px;
+  font-size: 16px;
+  font-family: 'Michroma';
+  color: gray;
+}
+
+.radio-group{
+  font-family: 'Michroma';
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+input[type="date"]:not(:focus):not(:valid)::-webkit-datetime-edit {
+  color: transparent;
+}
+
+input[type="date"]:focus::-webkit-datetime-edit,
+input[type="date"]:valid::-webkit-datetime-edit {
+  color: black;
+}
+
+input[type="date"].date-filled::-webkit-datetime-edit {
+  color: black;
+}
+
+input-field.invalid {
+  border: 2px solid red;
+}
+
+input-field.valid {
+  border: 2px solid green;
+}

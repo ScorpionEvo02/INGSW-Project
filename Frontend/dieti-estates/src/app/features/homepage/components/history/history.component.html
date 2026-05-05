@@ -1,0 +1,34 @@
+<div *ngIf="immobili" class="div-user-history">
+    <p class="titolo-visti">Visti di Recente</p>
+    <div class="slider-container">
+      
+      <!-- Frecce posizionate FUORI dal contenitore delle card -->
+      <button class="nav-button left" (click)="scroll('left')">&#10094;</button>
+  
+      <div class="scroll-wrapper">
+        <div class="div-user-history-card-container" #scrollContainer>
+          <div *ngFor="let immobile of immobili" class="card" (click)="goImmobilePage(immobile)">
+            <div class="card-image-container">
+              <img
+                *ngIf="immobile?.immagine"
+                [src]="'data:image/jpeg;base64,' + immobile?.immagine"
+                alt="Immagine immobile"
+              />
+            </div>
+            <div class="div-costo">
+              <span class="euro">€</span>{{ formatCosto(immobile.costo) }}
+            </div>
+            <div class="div-info-immobile">
+              {{ immobile.numeroCamereLetto }} camere letto • {{ immobile.numeroStanze }} bagni • {{ immobile.metratura }} m²
+            </div>
+            <div class="div-indirizzo">
+              {{ immobile.indirizzo.citta }} , {{ immobile.indirizzo.comune }} <br />
+              {{ immobile.indirizzo.via }}, {{ immobile.indirizzo.civico }}
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <button class="nav-button right" (click)="scroll('right')">&#10095;</button>
+    </div>
+</div>

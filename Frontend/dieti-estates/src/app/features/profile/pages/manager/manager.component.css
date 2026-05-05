@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+.manager-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 92vh; 
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom:  70px;
+  color: #008000;
+  align-items: left;
+  font-family: 'Michroma';
+}
+
+.grid-container {
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 25px; 
+  max-width: 1200px;
+  width: 100%; 
+  justify-items: center; 
+  align-items: center; 
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

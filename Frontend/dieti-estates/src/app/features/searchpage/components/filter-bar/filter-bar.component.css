@@ -1,0 +1,129 @@
+.header-div-esterno-filter-bar{
+  margin: 0;
+  padding: 0 15px 0 15px;
+  top: 0;
+  width: calc(100% - 30px);
+  height: 45px;
+  background-color: azure;
+  z-index: 999;
+  border-bottom: 1px solid #13944F;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.filter-group {
+  position: relative;
+  display: inline-block;
+}
+  
+.filter-button {
+  border: 1px solid #767676;
+  background-color: #f5f5f5;
+  padding: 8px 8px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.6em;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 5px;
+}
+
+.filter-button:hover {
+  background-color: #13944F;
+  color: white;
+}
+
+.filter-button-text{
+  display: flex;
+  align-items: center;
+}
+  
+.dropdown-menu {
+  position: absolute;
+  top: 100%; 
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 12px;
+  z-index: 1000;
+  width: 250px;
+  margin-top: -1%;
+}
+
+.dropdown-menu label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+  
+.dropdown-menu input {
+  width: 90%;
+  padding: 6px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+  
+.dropdown-actions {
+  text-align: right;
+  margin-top: 10px;
+}
+ 
+.dropdown-actions button {
+  background-color: #28a745;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  margin-left: 8px;
+  transition: background-color 0.3s ease;
+}
+  
+.dropdown-actions button.dropdown-cancel {
+  background-color: #dc3545;
+}
+ 
+.dropdown-actions button:hover {
+  opacity: 0.9;
+}
+  
+.filter-group {
+  position: relative;
+}
+
+
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    max-width: 90vw;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .filter-button {
+    width: 100%;
+    font-size: 0.8em;
+  }
+
+  .extern-div-search-page {
+    flex-direction: column; 
+  }
+
+  .extern-immobili-div, .extern-map-div {
+    width: 100%; 
+  }
+}

@@ -1,0 +1,118 @@
+.offer-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 25px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: #fff;
+}
+  
+.offer-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+  max-width: 400px;
+}
+  
+.offer-details {
+  flex: 1;
+}
+
+.euro {
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+  
+.old-price {
+  color: red;
+  margin-right: 5px;
+}
+  
+.new-price {
+  font-weight: bold;
+  color: green;
+}
+  
+.offer-status {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  color: #f4f4f4;
+  margin-top: 5px;
+}
+  
+.status-pending {
+  background-color: #F4D03F;
+}
+  
+.status-accepted {
+  background-color: #13944F;
+}
+  
+.status-rejected {
+  background-color: red;
+}
+
+.empty {
+  text-align: center;
+  color: gray;
+}
+
+.admin-buttons {
+  margin-top: 10px;
+}
+
+.accept-btn {
+  width: 120px;         
+  font-family: 'Michroma';
+  border: 2px solid #13944F;
+  border-radius: 8px;
+  background-color: white;
+  color: #13944F;
+  padding: 8px 13px;
+  margin-right: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.reject-btn {
+  width: 120px;         
+  font-family: 'Michroma';
+  border: 2px solid red;
+  border-radius: 8px;
+  background-color: white;
+  color: red;
+  padding: 8px 13px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.accept-btn:hover {
+  background-color: #13944F;
+  color: white;
+}
+
+.reject-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+.profile-button{
+  text-decoration: none;
+  border: none;
+  border: 2px solid #13944F;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+}
+
+.profile-button:hover{
+  background-color: #13944F;
+  transition: background-color 0.3s ease;
+  color: white;
+}

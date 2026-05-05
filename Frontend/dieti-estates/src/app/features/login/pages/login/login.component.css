@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap'); 
+
+  .page-container 
+  {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1920px;
+    background-color: #9bb6a0; 
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .login-container 
+  {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 650px;
+    background-color: #FCFCFC; 
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+  }
+
+  .title 
+  {
+    font-size: 1.8rem;
+    font-family: 'Michroma';
+    font-weight: bold;
+    color: #13944F;
+    margin-bottom: 30px;
+  }
+
+  .subtitle 
+  {
+    font-size: 1.2rem;
+    font-family: 'Michroma';
+    font-weight: 100;
+    color: #A6A6A6;
+    margin-bottom: 40px;
+  }
+  
+  .login-form 
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .input-field 
+  {
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+    font-family: 'Michroma';
+    border: 1px solid #000000;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .confirm-button 
+  {
+    width: 100%;
+    max-width: 380px;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #13944F;
+    color: white;
+    font-family: 'Michroma';
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 6px 6px 10px #bebebe, -6px -6px 10px #ffffff;
+  }
+  
+  .login-button:hover 
+  {
+    background-color: #13944F;
+  }
+  
+  .register-text 
+  {
+    margin: 40px;
+    font-family: 'Michroma';
+    font-size: 14px;
+  }
+  
+  .register-link 
+  {
+    margin-left: 20px;
+    font-family: 'Michroma';
+    color: #0030DF;
+    text-decoration: none;
+  }
+  
+  .register-link:hover 
+  {
+    text-decoration: underline;
+  }
+  
+  .separator 
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 40px 0;
+  }
+  
+  .line 
+  {
+    width: 100px;
+    border: none;
+    border-top: 2px solid #A6A6A6;
+  }
+  
+  .separator span 
+  {
+    margin: 0 -110px;
+    font-family: 'Michroma';
+    color: #A6A6A6;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 600px) 
+  {
+    
+    .page-container
+    {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .login-container {
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center; 
+      width: 100%; 
+      max-width: 500px; 
+    }
+
+    .title 
+    {
+      margin-top: 2px;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+  
+    .subtitle 
+    {
+      font-size: 0.9rem;
+      margin-bottom: 40px;
+    }
+  
+    .register-text 
+    {
+      margin: 30px;
+      font-size: 0.8rem;
+    }
+
+    .register-link 
+    {
+      margin-left: 10px;
+    }
+
+    .line 
+    {
+      width: 100px;
+      border: none;
+      border-top: 2px solid #A6A6A6;
+    }
+    
+    .separator span 
+    {
+      margin: 0 -540px;
+      font-family: 'Michroma';
+      color: #A6A6A6;
+      white-space: nowrap;
+    }
+
+    .input-field
+    {
+      width: 310px;
+      font-size: 0.7rem;
+    }
+
+    .login-button,
+    .social-button 
+    {
+      width: 340px;
+      height: 50px;
+      font-size: 0.7rem;
+      padding: 0.5px;
+    }
+  }

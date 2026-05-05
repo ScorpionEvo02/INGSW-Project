@@ -1,0 +1,15 @@
+<div class="appointment-button" (click)="mostraAppointment()">
+  <div class="icon-container">
+    <img src="/profile/appointment.png" alt="appuntamento" class="icon" />
+  </div>
+  <div class="text-container">
+    <h3>Appuntamenti</h3>
+    <p>Consulta i tuoi appuntamenti giornalieri</p>
+  </div>
+</div>
+ 
+<modal-profile [isOpen]="showAppointment" (close)="closeAppointment()" popUpName="I tuoi appuntamenti">
+  <div class="extern-appointment-div">
+    <appointments-component [appuntamenti]="appuntamenti"/>
+  </div>
+</modal-profile>

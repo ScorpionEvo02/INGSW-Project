@@ -1,0 +1,119 @@
+<div *ngIf="immobili.length === 0" class="empty">
+    Nessun immobile inserito.
+  </div>
+  
+  <div class="list-immobile" *ngFor="let immobile of immobili; let i = index">
+    <div class="list-immobile-img">
+        <img *ngIf="immobile?.immagine" [src]="'data:image/jpeg;base64,' + immobile?.immagine" alt="Immagine immobile">
+        <h1 *ngIf="!immobile?.immagine">Immagine non disponibile</h1>
+    </div>
+    <div class="list-immobile-info">
+      <div class="list-immobile-prezzo-salva">
+        <div class="div-costo">
+            <span class="euro">€</span>{{ formatCosto(immobile.costo) }}
+        </div>
+      </div>
+      
+      <div class="div-info-immobile">
+          {{ immobile.numeroCamereLetto }} camere da letto • {{ immobile.numeroStanze }} bagno • {{ immobile.metratura }} m²
+      </div>
+      <div class="div-indirizzo">
+          {{ immobile.indirizzo.via }}, {{ immobile.indirizzo.civico }} <br> {{ immobile.indirizzo.citta }}, {{immobile.indirizzo.comune}}
+      </div>
+
+      <div class="immobile-etichetta">{{ immobile.etichetta }}</div>
+      
+      <div class="div-descrizione"> {{ immobile.descrizione }}</div>
+      
+      <div class ="bottoni-immobile">
+        <button (click)="openEditModal(immobile)" class="bottone-modifica">Modifica Immobile</button>
+        <button (click)="openAddImage(immobile.codImmobile)" class="bottone-immagine">Inserisci Immagini Immobile</button>
+      </div>
+  </div>
+</div>
+ 
+
+<div class="div-modifica-immobile" *ngIf="editingImmobile">
+  <div class="modifica-immobile">
+    <h2>Modifica immobile</h2>
+
+    <label>Tipo:</label>
+    <input [(ngModel)]="editingImmobile.tipo" />
+
+    <label>Descrizione:</label>
+    <input [(ngModel)]="editingImmobile.descrizione" />
+
+    <label>Costo:</label>
+    <input type="number" [(ngModel)]="editingImmobile.costo" />
+
+    <label>Metratura:</label>
+    <input type="number" [(ngModel)]="editingImmobile.metratura" />
+
+    <label>Piano:</label>
+    <input type="number" [(ngModel)]="editingImmobile.piano" />
+
+    <label>Numero stanze:</label>
+    <input type="number" [(ngModel)]="editingImmobile.numeroStanze" />
+
+    <label>Numero camere da letto:</label>
+    <input type="number" [(ngModel)]="editingImmobile.numeroCamereLetto" />
+
+    <label>Ascensore:</label>
+    <input type="checkbox" [(ngModel)]="editingImmobile.ascensore" />
+
+    <label>Portineria:</label>
+    <input [(ngModel)]="editingImmobile.portineria" />
+
+    <label for="classeEnergetica">Classe Energetica</label>
+    <select id="classeEnergetica" [(ngModel)]="editingImmobile.classeEnergetica" name="classeEnergetica" required>
+      <option value="" disabled selected>Seleziona classe energetica</option>
+      <option *ngFor="let classe of classiEnergetiche" [value]="classe">{{ classe }}</option>
+    </select>
+
+    <label for="stato">Stato:</label>
+    <select id="stato" [(ngModel)]="editingImmobile.stato" name="stato" required>
+      <option value="" disabled selected>Seleziona lo stato</option>
+      <option value="Affitto">Affitto</option>
+      <option value="Vendita">Vendita</option>
+      <option value="Venduto">Venduto</option>
+    </select>
+
+    <label>Etichetta:</label>
+    <input [(ngModel)]="editingImmobile.etichetta" />
+
+    <div style="margin-top: 10px;">
+      <button (click)="salvaModifiche()">Salva</button>
+      <button (click)="annullaModifica()">Annulla</button>
+    </div>
+  </div>
+</div>
+
+<div class="div-modifica-immagine" *ngIf="codImmobile">
+  <div class="modifica-immagine">
+    <h2>Aggiungi Immagini Immobile</h2>
+
+    <div class="form-upload">
+      <input type="file" (change)="caricaFoto($event)" multiple class="input-style" />
+      <button (click)="salvaImmagine()" class="bottone-immagine-salva">Salva</button>
+    </div>
+
+    <div class="immagini-immobile">
+      <div class="immagine-box" *ngFor="let immagine of immaginiImmobile; let i = index">
+        <img
+          *ngIf="immagine.immagine"
+          [src]="'data:image/jpeg;base64,' + immagine.immagine"
+          alt="Immagine Immobile"
+          class="immagine-preview"
+        />
+      </div>
+    </div>
+
+    <div class="actions">
+      <button (click)="annullaModifica()" class="bottone-immagine-annulla">Annulla</button>
+    </div>
+  </div>
+</div>
+
+
+<pop-up-component [popUp]="popUpData" [isOpen]="showPopUp" (close)="onClosePopUp()" />
+     

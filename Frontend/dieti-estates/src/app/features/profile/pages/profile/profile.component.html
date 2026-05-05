@@ -1,0 +1,13 @@
+<header-component />
+<div>
+    <div *ngIf="tipo=='cliente'" ><cliente-component /></div>
+    <div *ngIf="tipo == 'agente'">
+        <agent-component></agent-component>
+      </div>
+      <div *ngIf="tipo == 'gestore'">
+        <manager-component></manager-component>
+      </div>
+      <div *ngIf="tipo == 'amministratore'">
+        <admin-component></admin-component>
+      </div>
+</div>

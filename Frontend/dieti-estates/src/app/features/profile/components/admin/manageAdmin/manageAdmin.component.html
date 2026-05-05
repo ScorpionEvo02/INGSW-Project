@@ -1,0 +1,34 @@
+<div class="manage-admin-button" (click)="openGestori()">
+    <div class="icon-container">
+      <img src="/profile/manageAgent.png" alt="Gestisci Manager" class="icon" />
+    </div>
+    <div class="text-container">
+      <h3>Gestisci manager</h3>
+      <p>Gestisci manager della nostra agenzia</p>
+    </div>
+  </div>
+
+  <modal-profile [isOpen]="showGestori" (close)="closeGestori()" popUpName="Visualizzazione Manager">
+    <div *ngIf="gestori.length > 0" class="extern-immobili-div">
+      <div class="list-gestori-div-interno">
+        <p>&nbsp;{{ gestori.length }} risultati</p>
+        <div class="list-gestore-gestore" *ngFor="let gestore of gestori; let i = index">
+          <div style="padding: 5px;">
+            <h3>{{ gestore.nome }} {{ gestore.cognome }}</h3>
+            <h5 style="color: #13944F;">Email: {{ gestore.email }}</h5>
+            <div>
+              <h4>Codice Fiscale: {{ gestore.codiceFiscale }}</h4>
+            </div>
+              <!-- Pulsante Elimina -->
+              <div class="pulsante-elimina-container">
+            <button (click)="confermaEliminazioneGestore(gestore)" class="btn-elimina-gestore">
+              Elimina
+            </button>            
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p *ngIf="gestori.length === 0">Nessun gestore disponibile.</p>
+  </modal-profile>
+  

@@ -1,0 +1,33 @@
+<div class="manageagent-button" (click)="openAgents()">
+  <div class="icon-container">
+    <img src="/profile/agentlist.png" alt="Gestione Agente" class="icon" />
+  </div>
+  <div class="text-container">
+    <h3>Gestisci Agenti</h3>
+    <p>Visualizza e gestisci gli agenti registrati</p>
+  </div>
+</div>
+
+<modal-profile [isOpen]="showAgents" (close)="closeAgents()" popUpName="Visualizzazione Agenti">
+  <div *ngIf="agents.length > 0" class="extern-immobili-div">
+    <div class="list-agenti-div-interno">
+      <p>&nbsp;{{ agents.length }} risultati</p>
+      <div class="list-agente-agente" *ngFor="let agente of agents; let i = index">
+        <div style="padding: 5px;">
+          <h3>{{ agente.nome }} {{ agente.cognome }}</h3>
+          <h5 style="color: #13944F;">Email: {{ agente.email }}</h5>
+          <div>
+            <h4>Codice Fiscale: {{ agente.codiceFiscale }}</h4>
+          </div>
+          <div class="pulsante-elimina-container">
+            <button (click)="confermaEliminazioneAgente(agente)" class="btn-elimina-gestore">
+              Elimina
+            </button>            
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p *ngIf="agents.length === 0">Nessun agente disponibile.</p>
+</modal-profile>
+

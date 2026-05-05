@@ -1,0 +1,71 @@
+<div class="immobile-container">
+    <div class="div-costo-immagine">
+      <div>
+        <div class="div-costo">
+          <span class="euro">€</span>{{ formatCosto(immobile.costo) }}
+        </div>
+      </div>
+      <div class="div-salva">
+        <img (click)="addPreferito()" src="Immobile/icona-salva.svg" alt="Tasto salva" class="img-salva" />
+      </div>
+    </div>
+  
+    <div class="div-indirizzo">
+      {{ immobile.indirizzo.via }}, {{ immobile.indirizzo.civico }}<br />
+      {{ immobile.indirizzo.citta }}
+    </div>
+  
+    <div class="sezione-titolo">Caratteristiche</div>
+  
+    <div class="div-info">
+        <div class="intern-div-info">
+            <div class="intern-div-info-img">
+                <img src="/Immobile/camera.png" alt="Icona camere" class="icon-info" />
+            </div>
+            <div class="intern-div-info-text">Camere da letto {{ immobile.numeroStanze }}</div>
+        </div>
+
+        <div class="intern-div-info">
+            <div class="intern-div-info-img">
+                <img src="/Immobile/bagno.svg" alt="Icona bagni" class="icon-info" />
+            </div>
+            <div class="intern-div-info-text">Bagni {{ immobile.numeroCamereLetto }}</div>
+        </div>
+
+        <div class="intern-div-info">
+            <div class="intern-div-info-img">
+                <img src="/Immobile/classe-energetica.png" alt="Icona classe energetica" class="icon-info" />
+            </div>
+            <div class="intern-div-info-text">Classe energetica {{ immobile.classeEnergetica }}</div>
+        </div>
+  
+        <div class="intern-div-info">
+            <div class="intern-div-info-img">
+                <img src="/Immobile/metratura.png" alt="Icona metratura" class="icon-info" />
+            </div>
+            <div class="intern-div-info-text">{{ immobile.metratura }}m²</div>
+        </div>
+  
+        <div class="intern-div-info">
+            <div class="intern-div-info-img">
+                <img src="/Immobile/piano.png" alt="Icona piano" class="icon-info" />
+            </div>
+            <div class="intern-div-info-text">Piano {{ immobile.piano }}</div>
+        </div>
+  
+        <div class="intern-div-info" *ngIf="immobile.ascensore">
+            <div class="intern-div-info-img">
+                <img src="/Immobile/ascensore.png" alt="Icona ascensore" class="icon-info" />
+            </div>
+            <div class="intern-div-info-text">Ascensore</div>
+        </div>
+    </div>
+  
+    <br />
+  
+    <div class="sezione-titolo">Descrizione</div>
+    <div class="descrizione-immobile">
+        {{ immobile.descrizione }}
+    </div>
+    
+</div>

@@ -1,0 +1,12 @@
+<header-component />
+<filter-bar-component (filterChanged)="onFilterChanged($event)" style="position:relative; z-index: 2000;"/>
+<div class="extern-div-search-page">
+    
+    <div class="extern-immobili-div">
+        <pop-up-component [popUp]="popUpData" [isOpen]="popUp" (close)="popUp = false" />
+        <list-immobili-component [immobili]="filteredImmobili"  #listImmobili/>
+    </div>
+    <div class="extern-map-div" >
+        <map-component (onCoordChanged)="onCoordChanged($event)" [center]="coordinate" [immobili]="filteredImmobili" #mapComp/>
+    </div>
+</div>

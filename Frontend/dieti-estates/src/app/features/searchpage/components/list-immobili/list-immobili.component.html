@@ -1,0 +1,37 @@
+<div class="list-immobili-div-interno">
+    <p>&nbsp;{{ immobili.length }} risultati</p>
+    <div class="list-immobile" *ngFor="let immobile of immobili; let i = index">
+        <div class="list-immobile-img" (click)="goImmobilePage(immobile)">
+            <img *ngIf="immobile?.immagine" [src]="'data:image/jpeg;base64,' + immobile?.immagine" alt="Immagine immobile">
+            <h1 *ngIf="!immobile?.immagine">Immagine non disponibile</h1>
+        </div>
+        <div class="list-immobile-info">
+            <div class="list-immobile-prezzo-salva">
+                <div class="div-costo">
+                    <span class="euro">€</span>{{ formatCosto(immobile.costo) }}
+                </div>
+                <div class="list-immobile-salva">
+                    <img (click)="insertPreferitoUtente(immobile.codImmobile)" src= "SearchPage/icona-salva.svg" alt="Pulsante salvataggio" alt="Tasto preferiti" class="img-salva"/>
+                </div>
+            </div>
+            
+            <div class="div-info-immobile">
+                {{ immobile.numeroCamereLetto }} camere da letto • {{ immobile.numeroStanze }} bagno • {{ immobile.metratura }} m²
+            </div>
+            <div class="div-indirizzo">
+                {{ immobile.indirizzo.via }}, {{ immobile.indirizzo.civico }} <br> {{ immobile.indirizzo.citta }}, {{immobile.indirizzo.comune}}
+            </div>
+
+            <div class="immobile-etichetta">{{ immobile.etichetta }}</div>
+            
+            <div class="div-descrizione">
+                {{ immobile.descrizione }}
+            </div>
+            <div class="immobile-button">
+                <button (click)="goImmobilePage(immobile)" class="list-immobili-button">
+                    Visualizza immobile
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

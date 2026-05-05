@@ -1,0 +1,29 @@
+<div class="slideshow-container">
+  <!-- Immagine precedente -->
+  <div class="slide slide-previous">
+    <img
+      *ngIf="immaginiImmobile?.[getPreviousIndex()]?.immagine"
+      [src]="'data:image/jpeg;base64,' + immaginiImmobile[getPreviousIndex()].immagine"
+      alt="Immagine precedente">
+  </div>
+
+  <!-- Immagine corrente -->
+  <div class="slide slide-active">
+    <img
+      *ngIf="immaginiImmobile?.[currentIndex]?.immagine"
+      [src]="'data:image/jpeg;base64,' + immaginiImmobile[currentIndex].immagine"
+      alt="Immagine attuale">
+  </div>
+
+  <!-- Immagine successiva -->
+  <div class="slide slide-next">
+    <img
+      *ngIf="immaginiImmobile?.[getNextIndex()]?.immagine"
+      [src]="'data:image/jpeg;base64,' + immaginiImmobile[getNextIndex()].immagine"
+      alt="Immagine successiva">
+  </div>
+
+  <!-- Pulsanti di navigazione -->
+  <button class="prev" (click)="prev()">&#10094;</button>
+  <button class="next" (click)="next()">&#10095;</button>
+</div>

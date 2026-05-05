@@ -1,0 +1,13 @@
+<div class="social-login">
+    <pop-up-component [popUp]="popUp" [isOpen]="showPopUp" (close)="onClosePopUp()" />
+      <button class="social-button google" (click)="loginWith('Google')" [disabled]="isLoggingIn">
+        <img src="/Login/google-icon.svg" alt="Google" /> Continua con Google
+      </button>
+      <button class="social-button facebook" (click)="loginWith('Facebook')" [disabled]="isLoggingIn">
+        <img src="/Login/facebook-icon.svg" alt="Facebook" /> Continua con Facebook
+      </button>
+      <button class="social-button github" (click)="loginWith('GitHub')" [disabled]="isLoggingIn">
+        <img src="/Login/github-icon.svg" alt="GitHub" /> Continua con GitHub
+      </button>
+  </div>
+  

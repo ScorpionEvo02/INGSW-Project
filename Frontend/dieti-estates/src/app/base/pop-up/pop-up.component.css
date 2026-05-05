@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap'); 
+
+.pop-up-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 12000;
+}
+
+.pop-up-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.icon-container img {
+  display: block;
+  margin: 1.5rem auto 0.5rem auto;;
+  width: 90px;
+  height: 90px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: #d51d1d;
+}
+
+.pop-up-title {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-family: 'Michroma';
+  margin-bottom: 1rem;
+}
+
+.pop-up-description {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-family: 'Michroma';
+  color: #555;
+}

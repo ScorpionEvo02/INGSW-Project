@@ -1,0 +1,32 @@
+<div class="header-div-esterno">
+  <div class="header-left">
+    <a href="/">
+      <img src="/Header/Logo.svg" class="img-logo" alt="Icona Homepage" />
+    </a>
+  </div>
+
+  <div class="header-center">
+    <span class="header-title">DIETI ESTATES</span>
+  </div>
+
+  <div class="header-right">
+    <div *ngIf="!logout" class="header-div-login">
+      <div class=" header-button-login">
+        <a href="/login" class="remove-style-button">ACCEDI</a>
+      </div>
+      <div class="header-button-register">
+        <a href="/register" class="remove-style-button">REGISTRATI</a>
+      </div>
+    </div>
+
+    <div *ngIf="logout" class="header-div-logout">
+      <div class="dropdown">
+        <img src="/Header/Profile.svg" class="img-profile" alt="Bottone Profilo" (click)="toggleDropdown()" />
+        <div class="dropdown-menu" *ngIf="dropdownOpen">
+          <a href="/profile" class="dropdown-item" >Profilo</a>
+          <div class="dropdown-item" (click)="logoutUser()">Esci</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

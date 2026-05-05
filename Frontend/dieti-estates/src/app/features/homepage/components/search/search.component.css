@@ -1,0 +1,137 @@
+.div-background-image-search{
+    background-image: url('/Homepage/SfondoRicerca.svg');
+    min-height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.div-search-bar-esteno {
+    width: 90%;
+    max-width: 800px;
+    min-height: 180px;
+    margin: 0 auto;
+    border-radius: 30px;
+    background-color: #fcfcfc;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.div-search-bar-choice {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    margin-top:15px;
+}
+
+.div-bar-choice {
+    background-color: #f5f5f5;
+    padding: 10px 60px;
+    text-align: center;
+    border-radius: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.div-bar-choice:hover {
+    background-color: #13944f6a;
+    color: white;
+}
+
+.div-bar-choice.active {
+    background-color: #13944F;
+    color: white;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .search-bar {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .search-container {
+        width: 70%;
+        margin-right: 10px;
+    }
+}
+
+.search-container {
+    margin: 10px;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.search-bar-input-text {
+    font-family: 'Michroma';
+    height: 40px;
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+}
+
+.suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    position: absolute;
+    width: 100%;
+    background: white;
+    z-index: 10;
+    max-height: 150px;
+    overflow-y: auto;
+    top: 100%;
+    box-sizing: border-box;
+}
+
+.suggestions li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+.search-bar-button-div {
+    display: flex;
+    margin: 10px;
+}
+
+.search-bar-button {
+    font-family: 'Michroma';
+    text-decoration: none;
+    border: none;
+    margin: 5px;
+    border-radius: 24px;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border: 1px solid black;
+    font-size: 15px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.search-bar-button:hover {
+    background-color: #ED8442;
+}
+
+.search-bar-button-ricerca {
+    background-color: #13944F;
+    color: white;
+}
